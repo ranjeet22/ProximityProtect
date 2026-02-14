@@ -16,7 +16,7 @@ ProximityProtect is an intelligent child safety platform that shifts from reacti
 
 ## 🎯 Problem Statement
 
-Child abduction and missing child incidents are increasing in urban areas. Most existing safety solutions are reactive—they help track a child only after something has already gone wrong. ProximityProtect provides predictive protection by learning normal behavior patterns and alerting guardians before situations escalate.
+Child abduction and missing child incidents are increasing in urban areas. Most existing safety solutions are reactive, they help track a child only after something has already gone wrong. ProximityProtect provides predictive protection by learning normal behavior patterns and alerting guardians before situations escalate.
 
 ## ✨ Key Features
 
@@ -260,18 +260,13 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 👥 Team
 
-- **Project Lead**: [Your Name]
-- **Backend Developer**: [Name]
-- **Mobile Developer**: [Name]
-- **AI/ML Engineer**: [Name]
-- **UI/UX Designer**: [Name]
+- **Project Lead**: Ranjeet Singh
 
 ## 📧 Contact
 
-- **Email**: support@proximityprotect.com
-- **Website**: https://proximityprotect.com
-- **Twitter**: [@ProximityProtect](https://twitter.com/proximityprotect)
-- **Discord**: [Join our community](https://discord.gg/proximityprotect)
+- **Email**: singhranjeet8810@gmail.com
+- **Website**: coming soon
+- **LinkedIn**: [Ranjeet Singh](https://www.linkedin.com/in/ranjeet-singh-a08961305/)
 
 ## 🙏 Acknowledgments
 
