@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProximityProtect Tracking Dashboard</title>
+    <link rel="stylesheet" href="tracking.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <i class="ri-shield-check-fill"></i>
+            ProximityProtect
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">
+            <i class="ri-menu-line"></i>
+        </button>
+        <nav id="site-nav">
+            <ul>
+                <li><a href="ProximityProtect - Child Safety Platform.html#features">Features</a></li>
+                <li><a href="ProximityProtect - Child Safety Platform.html#how-it-works">How It Works</a></li>
+                <li><a href="ProximityProtect - Child Safety Platform.html#technology">Technology</a></li>
+                <li><a href="#dashboard">Tracking</a></li>
+            </ul>
+        </nav>
+        <a href="#connection" class="cta-btn">Connect Devices</a>
+    </header>
+
+    <main>
+        <section class="tracking-hero">
+            <div class="hero-copy">
+                <div class="hero-tag">Live Location Tracking</div>
+                <h1>Track your Child's Device Location in Real-Time</h1>
+                <p>
+                    Stay connected with your child’s live location, movement history, and instant alerts when they leave or enter safe zones.
+                </p>
+                <div class="hero-actions">
+                    <a href="#connection" class="btn-primary">
+                        Set Up Connection <i class="ri-links-line"></i>
+                    </a>
+                    <button id="startDemoMode" class="btn-secondary" type="button">
+                        Run Demo Route <i class="ri-route-line"></i>
+                    </button>
+                </div>
+                <div class="hero-note">
+                    <i class="ri-information-line"></i>
+                    <span>Use the same family code on both devices. Parent mode listens to the session, and child mode shares live GPS to that session.</span>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-panel-card">
+                    <div class="panel-label">Connection Status</div>
+                    <div class="panel-value" id="trackingState">Set up Device Connection</div>
+                    <div class="panel-subtext" id="trackingSource">Connect your child’s device to start tracking</div>
+                    <div class="connection-summary">
+                        <div class="connection-summary-item">
+                            <span>Family code</span>
+                            <strong id="familyCodeStatus">Not connected</strong>
+                        </div>
+                        <div class="connection-summary-item">
+                            <span>Current role</span>
+                            <!-- <strong id="roleStatus">Not connected</strong> -->
+                            <strong id="roleStatus">Not connected</strong>
+                        </div>
+                        <div class="connection-summary-item">
+                            <span>Account</span>
+                            <strong id="signedInUserLabel">Not signed in</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="mini-stat">
+                        <span>Active zone</span>
+                        <strong id="heroZoneStatus">Outside all zones</strong>
+                    </div>
+                    <div class="mini-stat">
+                        <span>Alert level</span>
+                        <strong id="heroAlertLevel">Monitoring</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="connection-section" id="connection">
+            <div class="connection-grid">
+                <div class="panel card">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Shared Session</p>
+                            <h2>Family Connection</h2>
+                        </div>
+                        <span class="status-pill warn" id="backendBadge">Setup Required</span>
+                    </div>
+                    <div class="form-grid">
+                        <label>
+                            Family code
+                            <input id="familyCodeInput" type="text" maxlength="24" placeholder="CARTER-101">
+                        </label>
+                        <label>
+                            Child name
+                            <input id="childNameInput" type="text" maxlength="40" placeholder="Alex Carter">
+                        </label>
+                    </div>
+                    <div class="connection-feedback" id="connectionFeedback">
+                        <span class="feedback-dot"></span>
+                        <span id="connectionFeedbackText">Enter a family code and choose a role to begin.</span>
+                    </div>
+                    <div class="action-stack dual-actions">
+                        <button id="connectParentButton" class="action-btn action-btn-primary" type="button">
+                            <i class="ri-parent-line"></i> Connect as Parent
+                        </button>
+                        <button id="connectChildButton" class="action-btn" type="button">
+                            <i class="ri-smartphone-line"></i> Share This Device as Child
+                        </button>
+                    </div>
+                    <p class="hint-text">Use the same family code on both devices. Parent mode listens to the shared session. Child mode publishes live GPS updates to the backend.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section" id="dashboard">
+            <div class="dashboard-grid">
+                <aside class="control-column">
+                    <div class="panel card">
+                        <div class="panel-heading">
+                            <div>
+                                <p class="eyebrow">Child Profile</p>
+                                <h2>Current Session</h2>
+                            </div>
+                            <span class="status-pill" id="sessionBadge">Idle</span>
+                        </div>
+                        <div class="profile-block">
+                            <div class="profile-avatar" id="profileAvatar">🔴</div>
+                            <div>
+                                <!-- <h3 id="profileNameLabel">Alex Carter</h3> -->
+                                <h3 id="profileNameLabel">Connection Pending</h3>
+                                <p id="lastUpdateLabel">No location received </p>
+                            </div>
+                        </div>
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <span>Current zone</span>
+                                <strong id="currentZoneLabel">Outside all zones</strong>
+                            </div>
+                            <div class="summary-card">
+                                <span>Speed</span>
+                                <strong id="speedLabel">0 km/h</strong>
+                            </div>
+                            <div class="summary-card">
+                                <span>Coordinates</span>
+                                <strong id="coordsLabel">Waiting...</strong>
+                            </div>
+                            <div class="summary-card">
+                                <span>Route points</span>
+                                <strong id="routeCountLabel">0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel card">
+                        <div class="panel-heading">
+                            <div>
+                                <p class="eyebrow">Actions</p>
+                                <h2>Tracking Controls</h2>
+                            </div>
+                        </div>
+                        <div class="action-stack">
+                            <button id="centerMapButton" class="action-btn action-btn-primary" type="button">
+                                <i class="ri-focus-3-line"></i> Center on Child
+                            </button>
+                            <button id="requestAlertsButton" class="action-btn" type="button">
+                                <i class="ri-notification-3-line"></i> Enable Browser Alerts
+                            </button>
+                            <button id="clearRouteButton" class="action-btn" type="button">
+                                <i class="ri-eraser-line"></i> Clear Local Route View
+                            </button>
+                        </div>
+                        <p class="hint-text">Create geofences from the parent dashboard. They sync to the backend session and persist for the same family code.</p>
+                    </div>
+
+                    <div class="panel card">
+                        <div class="panel-heading">
+                            <div>
+                                <p class="eyebrow">Geofences</p>
+                                <h2>Saved Safe Zones</h2>
+                            </div>
+                        </div>
+                        <div id="zoneList" class="zone-list">
+                            <p class="empty-state">No geofences yet. Draw one on the map to begin.</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="map-column">
+                    <div class="map-shell card">
+                        <div class="map-toolbar">
+                            <div>
+                                <p class="eyebrow">Live Map</p>
+                                <h2>Boundary Monitoring</h2>
+                            </div>
+                            <div class="toolbar-badges">
+                                <span class="toolbar-pill safe" id="mapStatusBadge">Monitoring</span>
+                                <span class="toolbar-pill" id="locationModeBadge">No feed</span>
+                            </div>
+                        </div>
+                        <div id="map"></div>
+                        <div class="map-footer">
+                            <div class="footer-stat">
+                                <span>Location source</span>
+                                <strong id="locationSourceLabel">Waiting for a location source</strong>
+                            </div>
+                            <div class="footer-stat">
+                                <span>Alerts today</span>
+                                <strong id="alertCountLabel">0</strong>
+                            </div>
+                            <div class="footer-stat">
+                                <span>Last boundary event</span>
+                                <strong id="lastBoundaryEventLabel">None</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feed-grid">
+                        <div class="panel card">
+                            <div class="panel-heading">
+                                <div>
+                                    <p class="eyebrow">Route History</p>
+                                    <h2>Recent Movement</h2>
+                                </div>
+                            </div>
+                            <div id="routeHistory" class="feed-list">
+                                <p class="empty-state">Route points will appear here as tracking updates arrive.</p>
+                            </div>
+                        </div>
+
+                        <div class="panel card">
+                            <div class="panel-heading">
+                                <div>
+                                    <p class="eyebrow">Alerts</p>
+                                    <h2>Boundary Activity</h2>
+                                </div>
+                            </div>
+                            <div id="alertFeed" class="feed-list">
+                                <p class="empty-state">Alerts will appear when the child enters or exits a geofence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="geofenceModal" class="modal hidden" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="geofenceTitle">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">New Geofence</p>
+                    <h2 id="geofenceTitle">Name this safe zone</h2>
+                </div>
+                <button id="closeModalButton" class="icon-btn" type="button" aria-label="Close modal">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <form id="geofenceForm" class="modal-form">
+                <label>
+                    Zone name
+                    <input id="geofenceNameInput" name="name" type="text" maxlength="40" placeholder="Home, School, Tuition..." required>
+                </label>
+                <label>
+                    Zone label
+                    <select id="geofenceCategoryInput" name="category">
+                        <option value="Safe Zone">Safe Zone</option>
+                        <option value="School">School</option>
+                        <option value="Home">Home</option>
+                        <option value="Pickup Point">Pickup Point</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                </label>
+                <div class="modal-actions">
+                    <button id="cancelGeofenceButton" class="btn-secondary" type="button">Cancel</button>
+                    <button class="btn-primary" type="submit">Save Geofence</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="firebase-config.js"></script>
+    <script type="module" src="tracking.js"></script>
+</body>
+</html>

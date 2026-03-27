@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProximityProtect - Child Safety Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <!-- <div class="logo">
+            <i class="ri-shield-check-fill"></i>
+            ProximityProtect
+        </div> -->
+        <div class="logo">
+            <img src="logo.png" alt="ProximityProtect Logo">
+            <span>ProximityProtect</span>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">
+            <i class="ri-menu-line"></i>
+        </button>
+        <nav id="site-nav">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tracking.html" class="cta-btn">Get Started</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">AI-Powered Child Safety</div>
+            <!-- <h1>Keeping Your World Safe,<br><span>One Step at a Time</span></h1> -->
+            <h1>
+            Close to Your Heart...<br>
+            <span class="highlight">Even When Apart🩵</span>
+            </h1>
+            <p>From school routes to safe zones, stay close to your child no matter where life takes them.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary">
+                    Download App <i class="ri-download-line"></i>
+                </a>
+                <a href="#" class="btn-secondary">
+                    Watch Demo <i class="ri-play-circle-line"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Hero.jpg" alt="ProximityProtect Dashboard" style="object-fit: cover; height: 500px;">
+        </div>
+    </section>
+
+    <section class="usp" id="features">
+        <h2 class="section-title">Why Choose ProximityProtect?</h2>
+        <p class="section-subtitle">We go beyond simple GPS tracking. Our AI learns patterns to predict and prevent risks before they happen.</p>
+        
+        <div class="usp-grid">
+            <div class="usp-card">
+                <div class="usp-icon icon-blue">
+                    <i class="ri-brain-line"></i>
+                </div>
+                <h3>AI Pattern Learning</h3>
+                <p>Our system learns your child's daily routines and automatically flags unusual deviations or unfamiliar routes.</p>
+            </div>
+            <div class="usp-card">
+                <div class="usp-icon icon-green">
+                    <i class="ri-map-pin-range-line"></i>
+                </div>
+                <h3>Smart Geo-Fencing</h3>
+                <p>Create safe zones instantly. Receive notifications when your child enters or leaves school, home, or playgrounds.</p>
+            </div>
+            <div class="usp-card">
+                <div class="usp-icon icon-red">
+                    <i class="ri-alarm-warning-line"></i>
+                </div>
+                <h3>Real-Time Risk Alerts</h3>
+                <p>Instant categorized alerts (Low, Medium, High) based on location context, speed, and time of day.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-block">
+            <div class="feature-content">
+                <span class="feature-tag">Intelligent Monitoring</span>
+                <h2>Behavioral Anomaly Detection</h2>
+                <p>The core of ProximityProtect is its ability to understand "normal." Unlike standard trackers, we analyze speed, stops, and route history.</p>
+                <ul class="feature-list">
+                    <li><i class="ri-check-line"></i> Detects sudden route changes</li>
+                    <li><i class="ri-check-line"></i> Identifies unusual stops or delays</li>
+                    <li><i class="ri-check-line"></i> Learns safe corridors automatically</li>
+                </ul>
+            </div>
+            <div class="feature-img">
+                <!-- Visual representation of anomaly detection -->
+                <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 15px 30px rgba(0,0,0,0.05); height: 400px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 30px; left: 30px; font-weight: bold; color: #333;">Route Analysis</div>
+                    <svg width="100%" height="100%" viewBox="0 0 400 300" style="margin-top: 20px;">
+                        <!-- Safe Route -->
+                        <path d="M50 250 Q 150 250 200 150 T 350 50" stroke="#E0E0E0" stroke-width="4" fill="none" stroke-dasharray="5,5"/>
+                        <!-- Actual Path -->
+                        <path d="M50 250 Q 150 250 200 150 L 250 200" stroke="#F44336" stroke-width="3" fill="none"/>
+                        <circle cx="250" cy="200" r="6" fill="#F44336"/>
+                        <!-- Alert Box -->
+                        <rect x="260" y="180" width="120" height="40" rx="5" fill="#FFEBEE" stroke="#FFCDD2"/>
+                        <text x="270" y="205" fill="#D32F2F" font-size="12" font-weight="bold">Unusual Stop</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-block reverse">
+            <div class="feature-content">
+                <span class="feature-tag">Emergency Response</span>
+                <h2>Instant SOS & Communication</h2>
+                <p>When seconds count, ProximityProtect provides immediate connection between parent and child.</p>
+                <ul class="feature-list">
+                    <li><i class="ri-check-line"></i> One-tap SOS button for children</li>
+                    <li><i class="ri-check-line"></i> Live audio listening in emergencies</li>
+                    <li><i class="ri-check-line"></i> Direct navigation to child's location</li>
+                </ul>
+            </div>
+            <div class="feature-img">
+                 <!-- Visual representation of SOS -->
+                 <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 15px 30px rgba(0,0,0,0.05); height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <div style="width: 120px; height: 120px; background: #FFEBEE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; animation: pulse 2s infinite;">
+                            <i class="ri-alarm-warning-fill" style="font-size: 50px; color: #F44336;"></i>
+                        </div>
+                        <h3 style="color: #333; margin-bottom: 10px;">SOS Triggered</h3>
+                        <p style="color: #666;">Sending location to all guardians...</p>
+                        <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+                            <span style="background: #E3F2FD; color: #1976D2; padding: 5px 10px; border-radius: 5px; font-size: 12px;">Audio Recording On</span>
+                            <span style="background: #E8F5E9; color: #388E3C; padding: 5px 10px; border-radius: 5px; font-size: 12px;">GPS Live</span>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="workflow" id="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">A seamless flow of data ensuring constant protection without being intrusive.</p>
+        
+        <div class="workflow-diagram">
+            <div class="diagram-steps">
+                <div class="step-node">
+                    <div class="step-icon">
+                        <i class="ri-smartphone-line"></i>
+                    </div>
+                    <div class="step-title">1. Data Collection</div>
+                    <div class="step-desc">Child's app securely collects GPS, speed, and motion data in real-time.</div>
+                </div>
+                
+                <div class="step-node">
+                    <div class="step-icon">
+                        <i class="ri-cpu-line"></i>
+                    </div>
+                    <div class="step-title">2. AI Processing</div>
+                    <div class="step-desc">Cloud AI analyzes patterns against historical data to detect anomalies.</div>
+                </div>
+                
+                <div class="step-node">
+                    <div class="step-icon">
+                        <i class="ri-notification-3-line"></i>
+                    </div>
+                    <div class="step-title">3. Risk Evaluation</div>
+                    <div class="step-desc">System classifies events: Safe (Green), Unusual (Yellow), or Danger (Red).</div>
+                </div>
+
+                <div class="step-node">
+                    <div class="step-icon">
+                        <i class="ri-shield-user-line"></i>
+                    </div>
+                    <div class="step-title">4. Parent Alert</div>
+                    <div class="step-desc">Instant notification sent to parent app with actionable insights.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-showcase">
+        <h2 class="section-title">Designed for Both Sides</h2>
+        <p class="section-subtitle">Intuitive interfaces for parents to monitor and children to stay safe.</p>
+        
+        <div class="mockups-container">
+            <!-- Parent App Mockup -->
+            <div class="mockup-item">
+                <div class="mockup-header">
+                    <h4>Parent Dashboard</h4>
+                    <span>Monitoring View</span>
+                </div>
+                <div class="mockup-screen parent-ui">
+                    <div class="map-view">
+                        <!-- Simulated Map Elements -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(#CFD8DC 1px, transparent 1px); background-size: 20px 20px; opacity: 0.5;"></div>
+                        <div class="map-marker">
+                            <div class="map-marker-inner"></div>
+                        </div>
+                        <div style="position: absolute; bottom: 10px; left: 10px; background: white; padding: 5px 10px; border-radius: 4px; font-size: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                            Last update: Just now
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="font-size: 16px;">Alex's Location</h3>
+                            <span class="status-badge status-safe">Safe Zone</span>
+                        </div>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Currently at <strong>Lincoln High School</strong>. Arrived at 08:30 AM.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <button style="flex: 1; padding: 8px; border: 1px solid #ddd; background: white; border-radius: 6px; font-size: 12px; cursor: pointer;">History</button>
+                            <button style="flex: 1; padding: 8px; border: none; background: var(--brand-blue); color: white; border-radius: 6px; font-size: 12px; cursor: pointer;">Call</button>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h3 style="font-size: 16px;">Recent Alerts</h3>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--alert-yellow);"></div>
+                            <span style="font-size: 12px; color: #555;">Battery low (15%) - 20 mins ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Child App Mockup -->
+            <div class="mockup-item">
+                <div class="mockup-header">
+                    <h4>Child App</h4>
+                    <span>Safety Interface</span>
+                </div>
+                <div class="mockup-screen child-ui">
+                    <div style="position: absolute; top: 20px; width: 100%; text-align: center;">
+                        <span style="font-size: 14px; color: #555; background: rgba(255,255,255,0.8); padding: 5px 15px; border-radius: 20px;">Protect Mode On</span>
+                    </div>
+                    
+                    <div class="sos-btn">
+                        <i class="ri-alarm-warning-fill"></i>
+                        <span>SOS</span>
+                    </div>
+                    <p style="color: #666; font-size: 14px; margin-bottom: 30px; text-align: center; padding: 0 20px;">Press and hold for 3 seconds to alert parents immediately.</p>
+                    
+                    <button class="check-in-btn">
+                        <i class="ri-map-pin-user-fill"></i>
+                        Check In
+                    </button>
+                    
+                    <div style="margin-top: 20px; display: flex; gap: 15px;">
+                        <div style="text-align: center; color: #555;">
+                            <div style="width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 0 auto 5px;">
+                                <i class="ri-phone-fill" style="color: var(--brand-blue);"></i>
+                            </div>
+                            <span style="font-size: 12px;">Call Dad</span>
+                        </div>
+                        <div style="text-align: center; color: #555;">
+                            <div style="width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 0 auto 5px;">
+                                <i class="ri-message-3-fill" style="color: var(--primary-green);"></i>
+                            </div>
+                            <span style="font-size: 12px;">Message</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack" id="technology">
+        <h2 class="section-title">Powered by Advanced Technology</h2>
+        <div class="tech-logos">
+            <div class="tech-item">
+                <i class="ri-google-fill tech-icon"></i>
+                <span>Google Maps API</span>
+            </div>
+            <div class="tech-item">
+                <i class="ri-cloud-line tech-icon"></i>
+                <span>Cloud Computing</span>
+            </div>
+            <div class="tech-item">
+                <i class="ri-robot-line tech-icon"></i>
+                <span>Machine Learning</span>
+            </div>
+            <div class="tech-item">
+                <i class="ri-lock-2-line tech-icon"></i>
+                <span>End-to-End Encryption</span>
+            </div>
+            <div class="tech-item">
+                <i class="ri-bluetooth-connect-line tech-icon"></i>
+                <span>IoT Integration</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2><i class="ri-shield-check-fill" style="color: var(--primary-green);"></i> ProximityProtect</h2>
+                <p>Ensuring the safety of the next generation through intelligent technology and proactive protection.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">Hardware</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 ProximityProtect Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const siteNav = document.querySelector('#site-nav');
+
+        if (menuToggle && siteNav) {
+            const closeMenu = () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                siteNav.classList.remove('nav-open');
+                menuToggle.innerHTML = '<i class="ri-menu-line"></i>';
+                menuToggle.setAttribute('aria-label', 'Open navigation menu');
+            };
+
+            menuToggle.addEventListener('click', () => {
+                const isOpen = siteNav.classList.toggle('nav-open');
+                menuToggle.setAttribute('aria-expanded', String(isOpen));
+                menuToggle.innerHTML = isOpen
+                    ? '<i class="ri-close-line"></i>'
+                    : '<i class="ri-menu-line"></i>';
+                menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+            });
+
+            siteNav.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 560) {
+                    closeMenu();
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
