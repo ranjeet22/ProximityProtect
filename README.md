@@ -18,6 +18,8 @@ ProximityProtect is an intelligent child safety platform that shifts from reacti
 
 Child abduction and missing child incidents are increasing in urban areas. Most existing safety solutions are reactive, they help track a child only after something has already gone wrong. ProximityProtect provides predictive protection by learning normal behavior patterns and alerting guardians before situations escalate.
 
+## 🔍 Live Demo : [Proximity Protect](https://proximity-protect.netlify.app/)
+
 ## ✨ Key Features
 
 ### 🗺️ Geo-Fencing Safe Zones
