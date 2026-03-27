@@ -1,0 +1,167 @@
+ProximityProtect Tracking Application
+Usage and Feature Verification Guide
+
+1. Prerequisites
+
+- Firebase Authentication must have Anonymous sign-in enabled.
+- Cloud Firestore must be enabled.
+- The Firestore rules in FIREBASE_SETUP.md should be applied.
+- Open the website through a local web server or hosting environment.
+- Open tracking.html on both the parent device and the child device.
+
+2. How to Use the Application
+
+Landing page:
+- Open "ProximityProtect - Child Safety Platform.html".
+- Click "Get Started" to open the tracking dashboard.
+
+Parent device flow:
+- Open tracking.html on the parent device.
+- Enter a family code in the Family Connection section.
+- Enter the child name.
+- Click "Connect as Parent".
+- The connection feedback should confirm that the parent dashboard is connected.
+
+Child device flow:
+- Open tracking.html on the child device.
+- Enter the same family code.
+- Enter the same child name.
+- Click "Share This Device as Child".
+- Allow location access when the browser asks for permission.
+- The connection feedback should confirm that the child device is sharing live GPS.
+
+Geofence setup:
+- Use the draw tools on the map from the parent dashboard.
+- Draw a circle, rectangle, or polygon.
+- Enter the zone name and zone label in the modal.
+- Save the geofence.
+- The new geofence should appear in the Saved Safe Zones list.
+
+Notifications:
+- On the parent dashboard, click "Enable Browser Alerts".
+- Accept the browser notification request.
+- Alerts will appear in the UI and may also appear as browser notifications.
+
+Demo route:
+- On a child-connected session, click "Run Demo Route".
+- The application will publish simulated movement through the backend.
+- This is useful when testing without moving the real child device.
+
+3. Feature Verification Checklist
+
+Feature: Firebase initialization
+How to verify:
+- Open tracking.html.
+- The Connection Status card should not say "Backend not configured".
+- The Family Connection feedback should say Firebase is ready.
+- The signed-in account field should show an anonymous Firebase user id after connection.
+
+Feature: Parent connection
+How to verify:
+- Click "Connect as Parent".
+- The parent button should show visible loading feedback while connecting.
+- After success, the parent button should show an active state.
+- The role indicator should show "Parent mode".
+- The status card should show the selected family code.
+
+Feature: Child connection
+How to verify:
+- Click "Share This Device as Child".
+- The child button should show visible loading feedback while connecting.
+- After success, the child button should show an active state.
+- The role indicator should show "Child mode".
+- The status card should show the selected family code.
+
+Feature: Live cross-device location sharing
+How to verify:
+- Connect the parent on one device and the child on another using the same family code.
+- Move the child device or wait for a GPS update.
+- The parent map marker should update.
+- The parent dashboard coordinates and last update timestamp should change.
+- The route history section should show new location entries.
+
+Feature: Geofence creation
+How to verify:
+- Connect as parent.
+- Draw a new geofence on the map.
+- Save it with a name.
+- Confirm it appears in the Saved Safe Zones list.
+- Refresh the page and reconnect.
+- Confirm the geofence still appears.
+
+Feature: Geofence syncing across devices
+How to verify:
+- Create a geofence on the parent dashboard.
+- Open the child page with the same family code.
+- The geofence should appear on the child map as well.
+
+Feature: Boundary detection
+How to verify:
+- Put the child location inside a saved zone.
+- The Current Zone field should show the zone name.
+- Move the child outside the zone or use demo mode to cross the boundary.
+- The Current Zone field should change to "Outside all zones".
+
+Feature: Alert feed
+How to verify:
+- Move the child into a geofence.
+- Confirm an "Entered ..." alert appears.
+- Move the child out of the geofence.
+- Confirm a "Boundary exit detected" alert appears.
+
+Feature: Browser notifications
+How to verify:
+- Click "Enable Browser Alerts" on the parent device.
+- Trigger a boundary enter or exit.
+- Confirm a browser notification appears if the browser allows notifications.
+
+Feature: Route history
+How to verify:
+- Start child sharing.
+- Move the child device or run demo mode.
+- Confirm multiple route entries appear in Recent Movement.
+- Confirm the count in Route Points updates.
+
+Feature: Center on Child
+How to verify:
+- Pan away from the child marker on the map.
+- Click "Center on Child".
+- Confirm the map returns to the child marker.
+
+Feature: Remove geofence
+How to verify:
+- Create a geofence.
+- Click "Remove" in the Saved Safe Zones list.
+- Confirm it disappears from the list and from the map.
+- Refresh and reconnect to verify it stays removed.
+
+Feature: Mobile navigation
+How to verify:
+- Open the site on a narrow screen.
+- Confirm the top navigation becomes a hamburger menu.
+- Tap it and confirm the menu opens and closes correctly.
+
+4. Expected Warning and Error Cases
+
+If Firebase is not configured:
+- The connection feedback should show an error state.
+- Parent and child connection buttons should not silently fail.
+
+If location permission is denied on the child device:
+- The child session should show an error message.
+- Live location should not publish.
+
+If Firestore or Authentication is not enabled:
+- Connection attempts should show an error in the feedback area and alert feed.
+
+5. Recommended Final Test Flow
+
+- Connect parent on device 1.
+- Connect child on device 2.
+- Confirm the parent receives live child coordinates.
+- Create one geofence around the current child position.
+- Move the child outside the geofence or run demo mode.
+- Confirm route history updates.
+- Confirm enter and exit alerts appear.
+- Refresh the parent page and reconnect.
+- Confirm the geofence is still present and the session can reconnect cleanly.
