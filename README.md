@@ -7,7 +7,7 @@
 ![Backend](https://img.shields.io/badge/backend-Firebase%20%7C%20Firestore-FF9800)
 ![Map](https://img.shields.io/badge/maps-Leaflet-2E7D32)
 
-<img width="1326" height="707" alt="Image" src="https://github.com/user-attachments/assets/74ba7c99-b10c-491d-948d-691bf56a7ced" />
+<img width="1326" height="707" alt="Image" src="https://github.com/user-attachments/assets/2177309f-caa9-4e9b-aef2-e2ee5318dccb" />
 
 ## Table of Contents
 
@@ -56,7 +56,7 @@ The project uses:
 
 ## How It Works
 
-<img width="1148" height="917" alt="Image" src="https://github.com/user-attachments/assets/0ec5d0b3-a5ae-4a79-b921-ccf3a9241f62" />
+<img width="1148" height="917" alt="Image" src="https://github.com/user-attachments/assets/7c2226f4-9f42-4488-a419-82f94c6027bf" />
 
 ##
 
@@ -202,18 +202,18 @@ For the full setup guide, see `docs/FIREBASE_SETUP.md`
 
 ## Architecture
 
-<img width="1480" height="560" alt="Image" src="https://github.com/user-attachments/assets/bfa0a9d0-7389-4c9a-b480-fa714e87a6fd" />
+<img width="1480" height="560" alt="Image" src="https://github.com/user-attachments/assets/8819ffac-1e9c-48ef-a0a6-09eb20d3a111" />
 
 ## Data Flow Diagrams
 
 ### Level 0
-<img width="1671" height="523" alt="Image" src="https://github.com/user-attachments/assets/1d98682f-b6b2-4928-8285-69b192fc3599" />
+<img width="1671" height="523" alt="Image" src="https://github.com/user-attachments/assets/5ebf497a-910c-4079-b604-5b4020a0fd03" />
 
 ### Level 1
-<img width="1584" height="705" alt="Image" src="https://github.com/user-attachments/assets/af7c48d3-c4a7-4620-8041-81a08d0fd87b" />
+<img width="1584" height="705" alt="Image" src="https://github.com/user-attachments/assets/0a0f9f69-0f6c-4699-97b7-a33c7fa86f86" />
 
 ### Level 2
-<img width="1467" height="677" alt="Image" src="https://github.com/user-attachments/assets/c6f2f6ba-43bf-4f55-9e2c-a2a2f7057dca" />
+<img width="1467" height="677" alt="Image" src="https://github.com/user-attachments/assets/8eb8f34f-fe34-4e02-ad15-19dbb6ddd250" />
 
 ---
 
@@ -235,15 +235,15 @@ If you want a deeper report-style explanation, see `docs/PROJECT_REPORT.md`
 ---
 
 ## Screenshots
-<img width="1887" height="906" alt="Image" src="https://github.com/user-attachments/assets/129dd5e2-16cd-4f94-ba1b-b723602989cd" />
+<img width="1887" height="906" alt="Image" src="https://github.com/user-attachments/assets/70343ca1-ea52-43ec-9e16-fae768a51996" />
 
 ## 
 
-<img width="1758" height="730" alt="Image" src="https://github.com/user-attachments/assets/5a708a18-2e17-4b3a-a6fa-b0c15ef09cf7" />
+<img width="1758" height="730" alt="Image" src="https://github.com/user-attachments/assets/b5b4dade-d0cd-4af4-af1a-5603e550cfa6" />
 
 ## 
 
-<img width="1331" height="491" alt="Image" src="https://github.com/user-attachments/assets/88fb2d53-74aa-4a7f-bb42-25c33e1427ee" />
+<img width="1331" height="491" alt="Image" src="https://github.com/user-attachments/assets/e6ed87dc-4e5b-4550-8970-7e74e476dbad" />
 
 ---
 
